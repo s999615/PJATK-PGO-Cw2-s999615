@@ -18,6 +18,14 @@ public class Main{
         book1.returnBook(); // ksiazka zwrocona
         book1.showInfo(); // status ksiazki - true (dostepna)
 
+        Reader reader1 = new Reader("Anna", "Kowalska", "CARD1", 0);
+        Reader reader2 = new Reader("Jan", "Nowak", "CARD2", 0);
+
+        reader1.showData();
+        reader2.showData();
+        reader1.increaseNrOfRentals(); //musi dodac 1 record wyporzyczenia
+        reader1.showData(); //pokaze 1 w ilosci wyporzyczen
+
 
 
     }
