@@ -40,5 +40,31 @@ public class Library {
         return count;
     }
 
+    public void rentBook(String title, Reader reader) {
+        Book book = searchBookByTitle(title);
+        if (book == null) {
+            System.out.println("Book is not found");
+        } else if (!book.isIfAvailable()) {
+            System.out.println("Book is already rented");
+        } else {
+            book.rentBook();
+            reader.increaseNrOfRentals();
+            System.out.println(book.getTitle() + "is rented successfully");
+        }
+    }
+
+    public void returnBook(String title, Reader reader) {
+        Book book = searchBookByTitle(title);
+        if (book == null) {
+            System.out.println("Book is not found");
+        } else if (book.isIfAvailable()) {
+            System.out.println("Book is already returned");
+        } else {
+            book.returnBook();
+            reader.decreaseNrOfRentals();
+            System.out.println(book.getTitle() + "is returned successfully");
+        }
+    }
+
 
 }
