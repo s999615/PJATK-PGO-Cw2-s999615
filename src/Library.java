@@ -1,19 +1,18 @@
+import java.util.ArrayList;
+
 public class Library {
-    private Book[] books;
-    private int nrOfBooks;
+    private ArrayList<Book> books;
 
-    public Library(int capacity) {
-        books = new Book[capacity];
-        nrOfBooks = 0;}
-
-    public void addBook(Book book) {
-        books[nrOfBooks] = book;
-        nrOfBooks++;
+    public Library() {
+        books = new ArrayList<>();
     }
 
+    public void addBook(Book book) { this.books.add(book); }
+
+
     public void showAvailableBooks() {
-        for (int i = 0; i < nrOfBooks; i++) {
-            Book book = books[i];
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
             if (book.isIfAvailable()) {
                 book.showInfo();
             }
@@ -21,8 +20,8 @@ public class Library {
     }
 
     public Book searchBookByTitle(String title) {
-        for (int i = 0; i < nrOfBooks; i++) {
-            Book book = books[i];
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
             if (book.getTitle().equals(title)) {
                 return book;
             }
@@ -32,8 +31,8 @@ public class Library {
 
     public int countAvailableBooks() {
         int count = 0;
-        for (int i = 0; i < nrOfBooks; i++) {
-            Book book = books[i];
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
             if (book.isIfAvailable()) {
                 count++;
             }

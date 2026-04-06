@@ -26,7 +26,7 @@ public class Main{
         reader1.increaseNrOfRentals(); //musi dodac 1 record wyporzyczenia
         reader1.showData(); //pokaze 1 w ilosci wyporzyczen
 
-        Library library = new Library(10);
+        Library library = new Library();
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
@@ -35,7 +35,6 @@ public class Main{
 
         library.showAvailableBooks();
         System.out.println("Available books: " + library.countAvailableBooks());
-
 
 
     }
